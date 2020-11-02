@@ -7,6 +7,10 @@ This project was bootstrapped with [Create React App].
 
 In the project directory, you can run:
 
+## npm install
+before running npm start, 
+run the following command to download the dependencies
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
