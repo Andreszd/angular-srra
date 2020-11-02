@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 import '../../scss/blocks/Form.scss'
 const FormLogin = ({ setForm }) => {
     const [ handleInputChange, inputsErrors, inputs ] = useForm({
-        email:'',
+        username:'',
         password:''
     })
 
@@ -22,7 +22,13 @@ const FormLogin = ({ setForm }) => {
         e.preventDefault()
         const errors = inputsErrors()
         if( errors ) return showAlert(errors, false)
-        signIn(inputs)
+        const user = {
+            ...inputs,
+            firstName: inputs.username,
+            lastName: inputs.username,
+            confirmPassword: inputs.password
+        }
+        signIn(user)
     }
 
     return (
@@ -32,8 +38,8 @@ const FormLogin = ({ setForm }) => {
                 <p className="form__text">Sign into your account here</p>
             </div>
             <div className="form-input">
-                <input type="email" placeholder="Email / username" 
-                name="email"
+                <input type="text" placeholder="username" 
+                name="username"
                 className="form-input__item" 
                 onChange ={handleInputChange}/>
                 <i className="form-input__icon">

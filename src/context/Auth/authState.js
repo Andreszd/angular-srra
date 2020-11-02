@@ -21,18 +21,23 @@ const AuthState = ({ children }) => {
 
     const signIn = async (user) =>{
         try {
-            const response = await clientAxios.post('api/auth/login-user', user)
-            //console.log(response)
+            const response = await clientAxios.post('api/users/authenticate', user)
+            console.log(response.data)
             dispatch({
                 type: SIGN_IN_USER, 
                 payload: response.data
             })
-            authenticateUser()
+            //authenticateUser()
         } catch (error) {
-            if(!error.response) return console.log(error)
+            if(!error.response) return console.log(error.response)
+            let alertMessage = ""
+
+            if ( error.response.data.errors ) alertMessage = "Check the Fields"
+
+            if( error.response.data.error ) alertMessage = error.response.data.error.message
             dispatch({
                 type: ERROR_SIGN_IN_USER,
-                payload: error.response.data.message
+                payload: alertMessage 
             }) 
         }
     }

@@ -21,11 +21,13 @@ const AuthReducer = (state, action) =>{
                 messageError: action.payload
             }
         case SIGN_IN_USER:
-            localStorage.setItem('token', action.payload.token)
+            localStorage.setItem('token', action.payload.Token)
             return {
-                ...state
+                ...state,
+                user: action.payload,
+                authenticate: true,
             }
-        default : return null
+        default : return state
     }
 }
 export default AuthReducer
