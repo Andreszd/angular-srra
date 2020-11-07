@@ -16,6 +16,7 @@ export class EditSubjectComponent implements OnInit {
   public subjectEditorForm: FormGroup;
   public isLoading: boolean;
   public subjectToEdit: Subject = null;
+  public subject: Subject;
 
   constructor(private formBuilder: FormBuilder,
     private subjectService: SubjectService,
@@ -39,8 +40,8 @@ export class EditSubjectComponent implements OnInit {
 
   private buildForm() {
     this.subjectEditorForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(70)]],
-      docente: ['', [Validators.required, Validators.maxLength(70)]],
+      name: ['', [Validators.required, Validators.maxLength(70), Validators.pattern(/^[a-zA-Z0-9*()]+$/)]],
+      docente: ['', [Validators.required, Validators.maxLength(70), Validators.pattern(/^[a-zA-Z0-9*()]+$/)]],
     });
   }
 

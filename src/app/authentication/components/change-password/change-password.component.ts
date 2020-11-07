@@ -27,7 +27,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
-    this.route.params.subscribe(params => {debugger;
+    this.route.params.subscribe(params => {
       this.userService.findById(params["id"]).subscribe(user => {
         this.user = user;
       });

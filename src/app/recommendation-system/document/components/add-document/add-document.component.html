@@ -44,7 +44,7 @@
                 <div *ngIf="thumbnailData">
                     <img *ngIf="thumbnailData" [src]="thumbnailData" height="200"><br /><br />
                 </div>
-                <div *ngIf="imageErrorSize">
+                <div *ngIf="documentErrorSize">
                     <div class="alert text-danger">{{documentErrorSize}}</div>
                 </div>
                 <input style="display: none" type="file" accept=".pdf" onclick="this.value = null"

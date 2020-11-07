@@ -16,6 +16,9 @@
                     <div *ngIf="name.errors.maxlength">
                         El nombre debe tener máximo 70 caracteres.
                     </div>
+                    <div *ngIf="name.errors.pattern">
+                        El campo no acepta caracteres especiales.
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -27,6 +30,9 @@
                     </div>
                     <div *ngIf="docente.errors.maxlength">
                         El docente debe tener máximo 70 caracteres.
+                    </div>
+                    <div *ngIf="docente.errors.pattern">
+                        El campo no acepta caracteres especiales.
                     </div>
                 </div>
             </div>
