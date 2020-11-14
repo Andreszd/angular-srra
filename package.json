@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -28,10 +28,12 @@
     "aws-sdk": "^2.504.0",
     "bootstrap": "^4.4.1",
     "eva-icons": "^1.1.2",
+    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "ng-starrating": "^1.0.11",
     "ngx-jsonapi": "^2.0.2",
+    "path": "^0.12.7",
     "popper.js": "^1.16.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
@@ -46,5 +48,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "engines" : {
+    "node": "10.14.2",
+    "npm": "6.4.1"
   }
 }
